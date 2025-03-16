@@ -15,6 +15,12 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'org.mongodb:mongodb-driver-sync:5.3.1'
+	implementation 'org.mongodb:mongodb-driver-core:5.3.1'
+	implementation 'org.mongodb:bson:5.3.1'
+	implementation 'org.mongodb:bson-record-codec:5.3.1'
+	implementation 'org.mongodb:mongodb-crypt:5.3.1'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
 	testImplementation 'org.testcontainers:junit-jupiter'

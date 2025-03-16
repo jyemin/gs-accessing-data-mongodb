@@ -49,15 +49,15 @@ public class CustomerRepositoryTests {
 
 		repository.deleteAll();
 
-		dave = repository.save(new Customer("Dave", "Matthews"));
-		oliver = repository.save(new Customer("Oliver August", "Matthews"));
-		carter = repository.save(new Customer("Carter", "Beauford"));
+		dave = repository.save(new Customer("Dave", "Matthews", "000-00-0000"));
+		oliver = repository.save(new Customer("Oliver August", "Matthews", "000-00-0000"));
+		carter = repository.save(new Customer("Carter", "Beauford", "000-00-0000"));
 	}
 
 	@Test
 	public void setsIdOnSave() {
 
-		Customer dave = repository.save(new Customer("Dave", "Matthews"));
+		Customer dave = repository.save(new Customer("Dave", "Matthews", "000-00-0000"));
 
 		assertThat(dave.id).isNotNull();
 	}
@@ -73,7 +73,7 @@ public class CustomerRepositoryTests {
 	@Test
 	public void findsByExample() {
 
-		Customer probe = new Customer(null, "Matthews");
+		Customer probe = new Customer(null, "Matthews", "000-00-0000");
 
 		List<Customer> result = repository.findAll(Example.of(probe));
 
